@@ -38,7 +38,7 @@ export const AgentDetail = () => {
     const fetchAgentDetails = async () => {
       try {
         setLoading(true); // Start loading
-        const response = await axios.get(`https://backend-1-sval.onrender.com/api/agents/similar/${id}`);
+        const response = await axios.get(`http://localhost:5000/api/agents/similar/${id}`);
         if (response.status === 201) {
           // Handle if needed
         }
@@ -50,7 +50,7 @@ export const AgentDetail = () => {
         setSaveCounts(initialSaves);
 
         // Increment triedBy count
-        const triedByResponse = await axios.post(`https://backend-1-sval.onrender.com/api/agents/triedby/${id}`, {}, {
+        const triedByResponse = await axios.post(`http://localhost:5000/api/agents/triedby/${id}`, {}, {
           withCredentials: true, // Include if authentication is required
         });
 
@@ -74,7 +74,7 @@ export const AgentDetail = () => {
     event.stopPropagation();
 
     try {
-      const url = `https://backend-1-sval.onrender.com/api/users/wishlist/${agentId}`;
+      const url = `http://localhost:5000/api/users/wishlist/${agentId}`;
       const method = 'post';
 
       const response = await axios({

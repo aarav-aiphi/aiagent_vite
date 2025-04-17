@@ -7,6 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: '#1DA1F2', // Example primary color
+        secondary: '#14171A', 
         primaryBlue: '#002147', 
         primaryBlue2:'#4285F4',
         textblue:'#000080',
@@ -20,6 +22,9 @@ module.exports = {
            primary: '#4A90E2',
            accent: '#FF5722',
         // Add more custom colors here if needed
+      },
+      maxWidth: {
+        'container': '1200px', // Custom max-width for the container
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

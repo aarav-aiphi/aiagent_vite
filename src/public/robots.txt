@@ -1,0 +1,11 @@
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# If you have API routes or internal directories you don’t want indexed, uncomment and adjust:
+# Disallow: /api/
+# Disallow: /admin/
+# Disallow: /_next/
+
+# Point crawlers to your sitemap
+Sitemap: https://www.aiazent.ai/sitemap.xml

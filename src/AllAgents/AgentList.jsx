@@ -75,7 +75,7 @@ export const AgentList = ({ filters, setAgentListLoading }) => {
     event.stopPropagation();
 
     try {
-      const url = `https://backend-1-sval.onrender.com/api/users/like/${agentId}`;
+      const url = `http://localhost:5000/api/users/like/${agentId}`;
       const response = await axios.post(url, {}, { withCredentials: true });
 
       if (response.status === 200) {
@@ -105,7 +105,7 @@ export const AgentList = ({ filters, setAgentListLoading }) => {
     event.stopPropagation();
 
     try {
-      const url = `https://backend-1-sval.onrender.com/api/users/wishlist/${agentId}`;
+      const url = `http://localhost:5000/api/users/wishlist/${agentId}`;
       const response = await axios.post(url, {}, { withCredentials: true });
 
       if (response.status === 200) {

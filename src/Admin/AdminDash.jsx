@@ -98,10 +98,10 @@ const AdminDashboard = () => {
   const fetchAgents = useCallback(async () => {
     try {
       const [reqRes, accRes, rejRes, onHoldRes] = await Promise.all([
-        axios.get('https://backend-1-sval.onrender.com/api/admin/agents/requested', { withCredentials: true }),
-        axios.get('https://backend-1-sval.onrender.com/api/admin/agents/accepted', { withCredentials: true }),
-        axios.get('https://backend-1-sval.onrender.com/api/admin/agents/rejected', { withCredentials: true }),
-        axios.get('https://backend-1-sval.onrender.com/api/admin/agents/onHold', { withCredentials: true }),
+        axios.get('http://localhost:5000/api/admin/agents/requested', { withCredentials: true }),
+        axios.get('http://localhost:5000/api/admin/agents/accepted', { withCredentials: true }),
+        axios.get('http://localhost:5000/api/admin/agents/rejected', { withCredentials: true }),
+        axios.get('http://localhost:5000/api/admin/agents/onHold', { withCredentials: true }),
       ]);
 
       setAgents({
@@ -121,7 +121,7 @@ const AdminDashboard = () => {
   // ==============================
   const fetchMyRequests = useCallback(async () => {
     try {
-      const response = await axios.get('https://backend-1-sval.onrender.com/api/admin/myrequests', {
+      const response = await axios.get('http://localhost:5000/api/admin/myrequests', {
         withCredentials: true,
       });
       setMyRequests(response.data);
@@ -168,7 +168,7 @@ const AdminDashboard = () => {
   const updateAgentStatus = async (agentId, status, instructions = '') => {
     try {
       await axios.put(
-        `https://backend-1-sval.onrender.com/api/admin/agents/${agentId}/status`,
+        `http://localhost:5000/api/admin/agents/${agentId}/status`,
         { status, instructions },
         { withCredentials: true }
       );
@@ -202,7 +202,7 @@ const AdminDashboard = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post('https://backend-1-sval.onrender.com/api/newsletter/send', newsletterData, {
+      await axios.post('http://localhost:5000/api/newsletter/send', newsletterData, {
         headers: { 'Content-Type': 'application/json' },
       });
       toast.success('Newsletter sent successfully!');
@@ -229,7 +229,7 @@ const AdminDashboard = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`https://backend-1-sval.onrender.com/api/admin/agents/${agentId}`, {
+      await axios.delete(`http://localhost:5000/api/admin/agents/${agentId}`, {
         withCredentials: true,
       });
       toast.success('Deletion request submitted for superadmin approval.');
@@ -289,7 +289,7 @@ const AdminDashboard = () => {
       if (selectedFiles.thumbnail) formData.append('thumbnail', selectedFiles.thumbnail);
 
       await axios.put(
-        `https://backend-1-sval.onrender.com/api/admin/update/${agentToEdit._id}`,
+        `http://localhost:5000/api/admin/update/${agentToEdit._id}`,
         formData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },

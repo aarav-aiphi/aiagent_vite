@@ -189,7 +189,7 @@ const AgentFilterAndCard = () => {
       try {
         // Fetch filter options
         const filtersResponse = await axios.get(
-          "https://backend-1-sval.onrender.com/api/agents/filters"
+          "http://localhost:5000/api/agents/filters"
         );
         setFilterOptions({
           accessModels: filtersResponse.data.accessModels || [],
@@ -318,7 +318,7 @@ const AgentFilterAndCard = () => {
 
     try {
       const response = await axios.post(
-        `https://backend-1-sval.onrender.com/api/users/wishlist/${agentId}`,
+        `http://localhost:5000/api/users/wishlist/${agentId}`,
         {},
         {
           withCredentials: true,
@@ -341,7 +341,7 @@ const AgentFilterAndCard = () => {
     event.stopPropagation();
 
     try {
-      const url = `https://backend-1-sval.onrender.com/api/users/like/${agentId}`;
+      const url = `http://localhost:5000/api/users/like/${agentId}`;
       const method = "post";
 
       const response = await axios({

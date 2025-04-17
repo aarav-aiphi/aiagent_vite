@@ -14,7 +14,7 @@ export const updateWishlist = createAsyncThunk(
   'wishlist/updateWishlist',
   async (agentId, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`https://backend-1-sval.onrender.com/api/users/wishlist/${agentId}`, {}, {
+      const response = await axios.post(`http://localhost:5000/api/users/wishlist/${agentId}`, {}, {
         withCredentials: true,
       });
       return { agentId, savedByCount: response.data.agent.savedByCount };

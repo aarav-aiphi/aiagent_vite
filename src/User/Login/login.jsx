@@ -25,7 +25,7 @@ export const Login = () => {
 
   // Google login redirect
   const handleGoogleLogin = () => {
-    window.location.href = 'https://backend-1-sval.onrender.com/api/users/auth/google';
+    window.location.href = 'http://localhost:5000/api/users/auth/google';
   };
 
   const handleSubmit = async (e) => {
@@ -34,7 +34,7 @@ export const Login = () => {
 
     try {
       const response = await axios.post(
-        'https://backend-1-sval.onrender.com/api/users/login',
+        'http://localhost:5000/api/users/login',
         { email, password },
         { withCredentials: true, headers: { 'Content-Type': 'application/json' } }
       );

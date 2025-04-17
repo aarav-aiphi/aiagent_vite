@@ -20,7 +20,7 @@ const AdminOTPVerification = ({ userId, onVerified }) => {
     try {
       // POST request to /verify-otp with { userId, otp }
       const response = await axios.post(
-        'https://backend-1-sval.onrender.com/api/users/verify-otp',
+        'http://localhost:5000/api/users/verify-otp',
         { userId, otp },
         { withCredentials: true } // Ensure cookies are included
       );

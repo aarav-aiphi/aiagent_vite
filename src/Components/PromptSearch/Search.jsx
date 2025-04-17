@@ -38,7 +38,7 @@ const SearchComponent = () => {
   useEffect(() => {
     const fetchUseCases = async () => {
       try {
-        const response = await axios.get('https://backend-1-sval.onrender.com/api/usecase', {
+        const response = await axios.get('http://localhost:5000/api/usecase', {
           withCredentials: true,
         });
         setUseCases(response.data);
@@ -76,7 +76,7 @@ const SearchComponent = () => {
 
     setLoading(true);
     try {
-      const response = await axios.get('https://backend-1-sval.onrender.com/api/agents/search', {
+      const response = await axios.get('http://localhost:5000/api/agents/search', {
         params: { query: finalQuery },
         withCredentials: true,
       });
@@ -117,7 +117,7 @@ const SearchComponent = () => {
 
     try {
       await axios.post(
-        'https://backend-1-sval.onrender.com/api/users/save-search',
+        'http://localhost:5000/api/users/save-search',
         { query: searchQuery },
         {
           withCredentials: true,
@@ -148,7 +148,7 @@ const SearchComponent = () => {
     try {
       
      
-      const url = `https://backend-1-sval.onrender.com/api/users/like/${agentId}`;
+      const url = `http://localhost:5000/api/users/like/${agentId}`;
       const method = 'post';
 
       const response = await axios({
@@ -203,7 +203,7 @@ const SearchComponent = () => {
      
       
 
-      const url = `https://backend-1-sval.onrender.com/api/users/wishlist/${agentId}`;
+      const url = `http://localhost:5000/api/users/wishlist/${agentId}`;
       const method = 'post';
 
       const response = await axios({

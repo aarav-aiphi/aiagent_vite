@@ -41,6 +41,11 @@ import { Sponsor } from "./Components/NewAgentSponsor/Sponsor";
 import AdminUpload from "./Components/admin-upload";
 import NewsDetails from "./Components/NewsDetail";
 import SuperAdmin from "./Admin/SuperAdmin";
+import PostList from "./Components/PostList";
+import PostDetail from "./Components/PostDetail";
+import Agbuilder from "./builder";
+import ChatbotPage from "./ChatbotPage";
+
 
 const Applayout = () => {
   useEffect(() => {
@@ -177,6 +182,18 @@ const appRouter = createBrowserRouter([
             ,{
                 path:"/admin2",
                 element:<AdminUpload/>
+            },{
+                path:"/post",
+                element:<PostList/>
+            },{
+                path:"/post/:id",
+                element:<PostDetail/>
+            },{
+                path:"builder",
+                element:<Agbuilder/>
+            },{
+                path:"sales-chatbot",
+                element:<ChatbotPage/>
             }
         ]
     }
