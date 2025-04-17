@@ -96,7 +96,7 @@ const UserDashboard = () => {
   useEffect(() => {
     const fetchSavedAgents = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/users/wishlist', {
+        const response = await axios.get('https://backend-1-sval.onrender.com/api/users/wishlist', {
           withCredentials: true,
         });
         setSavedAgents(response.data.wishlist);
@@ -109,7 +109,7 @@ const UserDashboard = () => {
 
     const fetchLikedAgents = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/users/liked-agents', {
+        const response = await axios.get('https://backend-1-sval.onrender.com/api/users/liked-agents', {
           withCredentials: true,
         });
         setLikedAgents(response.data.likedAgents);
@@ -122,7 +122,7 @@ const UserDashboard = () => {
 
     const fetchUseCases = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/users/search-history', {
+        const response = await axios.get('https://backend-1-sval.onrender.com/api/users/search-history', {
           withCredentials: true,
         });
         setUseCases(response.data.searchHistory);
@@ -149,7 +149,7 @@ const UserDashboard = () => {
         // Function to fetch similar agents for a given agent ID
         const fetchSimilar = async (agentId) => {
           try {
-            const response = await axios.get(`http://localhost:5000/api/agents/similar/${agentId}`, {
+            const response = await axios.get(`https://backend-1-sval.onrender.com/api/agents/similar/${agentId}`, {
               withCredentials: true,
             });
             return response.data.bestMatches;
@@ -188,7 +188,7 @@ const UserDashboard = () => {
           setRecommendedAgents(sortedSimilarAgents.slice(0, 5));
         } else {
           // If no similar agents, fetch top-liked agents as recommendations
-          const response = await axios.get('http://localhost:5000/api/agents/top-likes-by-category');
+          const response = await axios.get('https://backend-1-sval.onrender.com/api/agents/top-likes-by-category');
           const topAgents = response.data;
           setRecommendedAgents(topAgents.slice(0, 5));
         }

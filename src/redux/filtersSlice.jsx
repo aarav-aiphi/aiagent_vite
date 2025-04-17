@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // Define the base URL for your API
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://backend-1-sval.onrender.com/api';
 
 // Initial state for filters
 const initialState = {

@@ -53,7 +53,7 @@ const SuperAdminDashboard = () => {
 
     try {
       // GET /api/superadmin/pending-changes
-      const response = await axios.get('http://localhost:5000/api/superadmin/pending-changes', {
+      const response = await axios.get('https://backend-1-sval.onrender.com/api/superadmin/pending-changes', {
         withCredentials: true, // if using cookie-based auth
       });
       setPendingChanges(response.data);
@@ -78,7 +78,7 @@ const SuperAdminDashboard = () => {
     try {
       // POST /api/superadmin/approve/:changeId
       const response = await axios.post(
-        `http://localhost:5000/api/superadmin/approve/${changeId}`,
+        `https://backend-1-sval.onrender.com/api/superadmin/approve/${changeId}`,
         {},
         {
           withCredentials: true,
@@ -116,7 +116,7 @@ const SuperAdminDashboard = () => {
     try {
       // POST /api/superadmin/reject/:changeId
       const response = await axios.post(
-        `http://localhost:5000/api/superadmin/reject/${changeToReject._id}`,
+        `https://backend-1-sval.onrender.com/api/superadmin/reject/${changeToReject._id}`,
         { reason: rejectionReason },
         {
           withCredentials: true,

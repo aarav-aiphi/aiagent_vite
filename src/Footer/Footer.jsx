@@ -21,7 +21,7 @@ export const Footer = () => {
     }
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/newsletter/subscribe',
+        'https://backend-1-sval.onrender.com/api/newsletter/subscribe',
         { email }
       );
       toast.success(response.data.message || 'Subscribed successfully!');

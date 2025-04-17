@@ -32,7 +32,7 @@ export const CategoryAgentPage = () => {
   const fetchCategories = async () => {
     try {
       const response = await axios.get(
-        'http://localhost:5000/api/agents/filters'
+        'https://backend-1-sval.onrender.com/api/agents/filters'
       );
       setCategories(response.data.categories.slice(0, 6) || []); // Slice to first 6 categories
     } catch (error) {

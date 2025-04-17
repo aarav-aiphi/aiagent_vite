@@ -24,7 +24,7 @@ export const Contact = () => {
     e.preventDefault();
     setStatus('Submitting...');
     try {
-      const res = await axios.post('http://localhost:5000/api/contact', formData);
+      const res = await axios.post('https://backend-1-sval.onrender.com/api/contact', formData);
       toast.success(res.data.message || 'Your message has been sent successfully!');
       setStatus('');
       setFormData({

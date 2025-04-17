@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchCurrentUser = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/users/current_user', {
+      const response = await axios.get('https://backend-1-sval.onrender.com/api/users/current_user', {
        
           withCredentials: true,
       });
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     axios
       .post(
-        'http://localhost:5000/api/users/logout',
+        'https://backend-1-sval.onrender.com/api/users/logout',
         {}, // Empty body if not required
         {
           withCredentials: true, // Correct: Passed as config

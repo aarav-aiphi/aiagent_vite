@@ -85,7 +85,7 @@ const BulkUpload = ({ isOpen, onClose, onUploadSuccess }) => {
       try {
         setUploading(true);
         const res = await axios.post(
-          'http://localhost:5000/api/admin/bulk-upload-csv', // Adjust to your backend route
+          'https://backend-1-sval.onrender.com/api/admin/bulk-upload-csv', // Adjust to your backend route
           { csv: csvData },
           {
             headers: { 'Content-Type': 'application/json' },
